@@ -1,0 +1,44 @@
+1. index.html
+
+<html lang="en">
+    <head>
+        <meta charset='UTF-8' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React Tutorials</title>
+    </head>
+    <body>
+        <button id="increment-btn">+1</button>
+        <div id="count-display">0</div>
+
+        <button id="increment-btn2">+1</button>
+        <div id="count-display2">0</div>
+
+        <script src="index.js"></script> 
+    </body>
+</html>
+
+2. index.js
+
+const incrementBtn = document.getElementById('increment-btn')
+const countDisplay = document.getElementById('count-display')
+
+let currentCount = 0
+
+incrementBtn.addEventListener('click', ()=> {
+    currentCount++
+    countDisplay.innerText = currentCount   
+})
+
+const incrementBtn2 = document.getElementById('increment-btn2')
+const countDisplay2 = document.getElementById('count-display2')
+
+let currentCount2 = 0
+
+incrementBtn2.addEventListener('click', ()=> {
+    currentCount2++
+    countDisplay2.innerText = currentCount2   
+})
+
+3. output
+
+double increment button with double increment values
