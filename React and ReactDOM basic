@@ -1,0 +1,28 @@
+index.html
+
+<html lang="en">
+    <head>
+        <meta charset='UTF-8' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React Tutorials</title>
+
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    </head>
+    <body>
+        <div id='root'></div>       
+
+        <script src="index.js"></script> 
+    </body>
+</html>
+
+2. index.js
+
+const reactContentRoot = document.getElementById('root')
+
+const myFirstElement = React.createElement('li', null, 'text or content') 
+//3 arguments need 1st html tag (li for list), 2nd here just null, 2, content or 
+// text or string or any react element
+
+ReactDOM.render(myFirstElement, reactContentRoot)
+// 2 args needed 1st what to feed, 2nd where to feed
