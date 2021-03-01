@@ -1,0 +1,48 @@
+to create react app
+we need to run npm i -g create-react-app   >in command prompt  // it will downloand all files to create react app
+
+then we need to run create-react-app any-name
+
+finnally we need to run npm start run
+
+check all react files listed in vs code like node_modules, public, src etc.,
+
+delete all files in src folder except index.js
+
+create componants folder under src folder and create App.js under components 
+
+its like C:\Users\ELCOT\intro-to-react\src\components\App
+
+then delete all lines in index.js and write the below code
+
+1. index.js  > to link App file to index.html file
+
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./components/App"
+
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+2. App.js here we can wire code for body of the html in index.html
+
+some example
+
+import React from "react"
+
+const App = () => {
+  const myItem = "abushu"
+
+  return (
+    <ul>
+      <li>itemm kadhf1</li>
+      <li>item2 dffajddfaaa {myItem}</li>
+      <li>{myItem.toUpperCase()}</li>
+    </ul>
+  )
+}
+
+export default App
+
+
+
