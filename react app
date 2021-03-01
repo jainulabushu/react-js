@@ -1,4 +1,5 @@
 to create react app
+we need to run in command prompt Node --version and npm --version // to check whether these are all installed in our system or not
 we need to run npm i -g create-react-app   >in command prompt  // it will downloand all files to create react app
 
 then we need to run create-react-app any-name
