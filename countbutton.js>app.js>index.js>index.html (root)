@@ -1,0 +1,32 @@
+1. index.js
+
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./components/App"
+
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+2. App.js
+
+import React from "react"
+import CountButtons from "./CountButton"
+
+const App = () => {
+
+  return <div><CountButtons/></div>      
+         
+}
+
+export default App
+
+3. CountButton.js
+
+import React from "react"
+
+const CountButtons = () => {
+    return <div>last, but not least</div>
+}
+
+export default CountButtons
+
