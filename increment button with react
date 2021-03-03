@@ -1,0 +1,29 @@
+1. index.js and App.js files remains same 
+
+2. CountButton.js
+
+import React, { useState } from "react"
+
+const CountButton = () => {
+
+    const [currentCount, setCurrentCount] = useState(0)
+//useState is a react library > need two args 1st var and 
+//2nd function these to var and fun updtd in chrome pg
+
+
+    const handleClick = ()=>{
+       setCurrentCount(currentCount + 1)
+    }
+
+    return <div>
+        <button onClick={handleClick}>+1</button>
+        <div>{currentCount}</div>
+    </div>
+}
+
+export default CountButton
+
+3 output
+
++1  //button
+12  //incremented values as many times button pressed, its value increses to adding 1
