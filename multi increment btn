@@ -1,0 +1,47 @@
+1. index.js remains same
+
+2. App.js
+
+import React from "react"
+import CountButton from "./CountButton"
+
+const App = () => {
+  return<div>
+        <CountButton/>
+        <CountButton/>
+        <CountButton/>
+        </div>              
+}
+
+export default App
+
+3. CountButton.js
+
+import React, { useState } from "react"
+
+const CountButton = () => {
+
+    const [currentCount, setCurrentCount] = useState(0)
+    
+    const handleClick = ()=>{
+        setCurrentCount(currentCount + 1)
+    }
+
+    return <div>
+        <button onClick ={handleClick}>+1</button>
+        <div>{currentCount}</div>
+    </div>
+}
+
+export default CountButton
+
+4. op
+
+3 buttons and 3 increment values
+
++1 //1st button
+4
++1 //2st button
+6
++1 //3st button
+2
