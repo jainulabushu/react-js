@@ -1,0 +1,56 @@
+1. index remains same
+
+2. App.js
+
+import React from "react"
+import CountButton from "./CountButton"
+
+const App = () => {
+  return<div>
+        <CountButton incrementBy={1}/>
+        <CountButton incrementBy={-1}/>
+        <CountButton incrementBy={2}/>
+        <CountButton incrementBy={-2}/>
+        <CountButton incrementBy={1/4}/>
+        <CountButton incrementBy={.2}/>
+        </div>              
+}
+
+export default App
+
+3. CountButton.js
+
+import React, { useState } from "react"
+
+const CountButton = (props) => {
+
+    const [currentCount, setCurrentCount] = useState(1)
+    
+    const handleClick = ()=>{
+        setCurrentCount(currentCount + props.incrementBy)
+    }
+
+    return <div>
+        <button onClick ={handleClick}>btn {props.incrementBy}</button>
+        <div>{currentCount}</div>
+    </div>
+}
+
+export default CountButton
+
+4. Output
+
+all buttons are clicked once
+
+btn 1
+2
+btn -1
+0
+btn 2
+3
+btn -2
+-1
+btn 0.25
+1.25
+btn 0.2
+1.2
