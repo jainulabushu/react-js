@@ -1,0 +1,46 @@
+1. index.js remains same
+
+2. App.js
+
+import React from "react"
+import CountButton from "./CountButton"
+
+const App = () => {
+  return<div>
+        <CountButton incrementBy={-1} buttonColor={'red'} borderRadius={"0px"}/>
+        <CountButton incrementBy={+2} buttonColor={'orange'} borderRadius={"10px"}/>
+        <CountButton incrementBy={-2} buttonColor={'white'} borderRadius={"1px"}/>
+        <CountButton incrementBy={+1/4} buttonColor={'blue'} borderRadius={"15px"}/>
+        <CountButton incrementBy={+0.2} buttonColor={'yellow'} borderRadius={"2px"}/>
+        </div>              
+}
+
+export default App
+
+3. CountButton.js
+
+import React, { useState } from "react"
+
+const CountButton = (prop) => {
+
+    const [currentCount, setCurrentCount] = useState(1)
+    console.log(prop)  
+    
+    const handleClick = ()=>{
+        setCurrentCount(currentCount + prop.incrementBy)
+    }
+    
+    const btnStyle = {
+        borderRadius: prop.borderRadius,
+        background: prop.buttonColor,
+    }
+
+    return <div >
+        <button style={btnStyle} onClick ={handleClick}>
+             {prop.incrementBy}</button>
+        <div>{currentCount}</div>
+    </div>
+}
+
+export default CountButton
+
