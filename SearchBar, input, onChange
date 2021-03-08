@@ -1,0 +1,34 @@
+1. index.js remains same
+
+2. App.js
+
+import React from "react"
+import CountButton from "./CountButton/CountButton"
+import SearchBar from "./SearchBar/SearchBar.js";
+
+const App = () => {
+  return<div>
+            <SearchBar />
+        </div>              
+}
+
+export default App
+
+3. SearchBar.js
+
+import React from 'react'
+import './SearchBar.css'
+
+const SearchBar= () =>{
+
+    const SearchValue ='just a msg'
+    const handleInputChange =()=>{
+        alert("Don't type")
+    }
+
+    return<div>
+        <input type='text' value={SearchValue} onChange={handleInputChange}></input>
+        </div>
+}
+
+export default SearchBar
