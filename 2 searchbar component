@@ -1,0 +1,73 @@
+1. index.js remains same
+
+2. App.js 
+
+import React from "react"
+import CountButton from "./CountButton/CountButton"
+import SearchBar from "./SearchBar/SearchBar.js";
+
+
+const App = () => {
+  return<div>
+            <SearchBar products={[
+    "face wash",
+    "face creem",
+    "tissue papper",
+    "oily skin",
+    "fair nlovely",
+    "mens fairness"
+]} />
+            <SearchBar products={[
+    "gear bike",
+    "mountain bike",
+    "bmx cycle",
+    "smart bycyle",
+    "hover board",
+]} />
+        </div>              
+}
+
+export default App
+
+3. SearchBar.js
+
+import React, {useState} from 'react'
+import './SearchBar.css'
+
+
+
+const SearchBar= (props) =>{
+
+    const [SearchValue, setSearchValue] = useState("")
+
+
+    const handleInputChange =(event)=>{
+        setSearchValue(event.target.value)
+    }
+
+    const handleClearClick = () =>{
+        setSearchValue("")
+    }
+
+    const shouldDisplayButton = SearchValue.length >0 
+    
+    const filteredProducts = props.products.filter((product) => {
+        return product.includes(SearchValue)
+    })
+
+    return<div>
+        <input type="text" value={SearchValue} onChange={handleInputChange} />
+        {shouldDisplayButton && <button onClick={handleClearClick}>clear</button>}
+        {SearchValue}
+
+        <ul>
+        {filteredProducts.map((product)=> {
+            return <li key={product}>{product}</li>
+        })}
+        </ul>
+        
+
+        </div>
+}
+
+export default SearchBar
