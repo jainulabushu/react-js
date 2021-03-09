@@ -1,0 +1,57 @@
+1. index.js remains same
+
+2. App.js
+
+import React from "react"
+import CountButton from "./CountButton/CountButton"
+import SearchBar from "./SearchBar/SearchBar.js";
+
+
+const App = () => {
+  return<div>
+            <CountButton incrementBy={5} buttonColor={'pink'} />
+            {/* <SearchBar products={[
+    "face wash",
+    "face creem",
+    "tissue papper",
+    "oily skin",
+    "fair nlovely",
+    "mens fairness"
+]} />
+            <SearchBar products={[
+    "gear bike",
+    "mountain bike",
+    "bmx cycle",
+    "smart bycyle",
+    "hover board",
+]} /> */}
+        </div>              
+}
+
+export default App
+
+3. CountButton.js
+
+import React, { useState, useEffect } from "react"
+import "./CountButton.css"
+
+const CountButton = (props) => {
+
+    const [currentCount, setCurrentCount] = useState(1)
+    
+    const handleClick = ()=>{
+        setCurrentCount(currentCount + props.incrementBy)
+    }
+    
+    useEffect(() => {
+        console.log("use eff func call")
+    }, [currentCount]) 
+
+    return <div >
+        <button onClick ={handleClick}>
+             {props.incrementBy}</button>
+        <div className={'count-display'}>{currentCount}</div>
+    </div>
+}
+
+export default CountButton
