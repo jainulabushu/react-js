@@ -31,9 +31,12 @@ const SearchBar= () =>{
         setSearchValue("")
     }
 
+    const shouldDisplayButton = SearchValue.length >0
+   
+
     return<div>
         <input type='text' value={SearchValue} onChange={handleInputChange} />
-        <button onClick={handleClearClick}>clear</button>
+        {shouldDisplayButton && <button onClick={handleClearClick}>clear</button>}
         <div>{SearchValue}</div>
         </div>
 }
